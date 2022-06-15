@@ -1,4 +1,3 @@
-'use strict';
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // BANKIST APP
@@ -9,7 +8,7 @@
 // DIFFERENT DATA! Contains movement dates, currency and locale
 
 const account1 = {
-  owner: 'Jonas Schmedtmann',
+  owner: 'Reza Mohammadi',
   movements: [200, 455, -306, 25000, -642, -133, 79, 1300],
   interestRate: 1.2, // %
   pin: 1111,
@@ -29,7 +28,7 @@ const account1 = {
 };
 
 const account2 = {
-  owner: 'Jessica Davis',
+  owner: 'Ali Soltani',
   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
   interestRate: 1.5,
   pin: 2222,
@@ -223,11 +222,6 @@ const startLogoutTimer = function () {
   return timer;
 };
 
-// FAKE Logged IN
-/* currentAccount = account1;
-updateUI(currentAccount);
-containerApp.style.opacity = 100; */
-
 btnLogin.addEventListener('click', function (e) {
   e.preventDefault();
 
@@ -251,17 +245,10 @@ btnLogin.addEventListener('click', function (e) {
       year: 'numeric',
     };
 
-    /* const locale = navigator.language;
-    console.log(locale); */
-
     labelDate.textContent = new Intl.DateTimeFormat(
       currentAccount.locale,
       options
     ).format(now);
-    /* const now = new Date().toLocaleDateString('fa-IR');
-    const hour = numberToPersian(`${new Date().getHours()}`.padStart(2, 0));
-    const min = numberToPersian(`${new Date().getMinutes()}`.padStart(2, 0));
-    labelDate.textContent = ` ${now} ساعت ${hour}:${min}`; */
 
     // Clear Input fields
     inputLoginUsername.value = inputLoginPin.value = '';
